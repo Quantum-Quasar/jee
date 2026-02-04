@@ -1,1 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEE Mains Mock Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #121212; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="text-gray-200 min-h-screen p-8">
 
+    <main class="max-w-5xl mx-auto">
+        <header class="mb-12 text-center">
+            <h1 class="text-4xl font-light tracking-tight text-white mb-2">JEE <span class="font-bold text-blue-500">Mains</span> Mock Test</h1>
+            <p class="text-gray-500">Select your session to begin the simulation.</p>
+        </header>
+
+        <section class="mb-12">
+            <h2 class="text-sm uppercase tracking-widest text-gray-500 mb-6 font-semibold">Subject Wise</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <a href="chemistry.html" class="glass-card p-6 rounded-2xl flex items-center justify-center text-lg font-medium">
+                    Chemistry
+                </a>
+                <a href="physics.html" class="glass-card p-6 rounded-2xl flex items-center justify-center text-lg font-medium">
+                    Physics
+                </a>
+                <a href="maths.html" class="glass-card p-6 rounded-2xl flex items-center justify-center text-lg font-medium">
+                    Mathematics
+                </a>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-sm uppercase tracking-widest text-gray-500 mb-6 font-semibold">Previous Year Papers (2021 - 2028)</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+                
+                <script>
+                    const container = document.currentScript.parentElement;
+                    for (let year = 21; year <= 28; year++) {
+                        ['1st', '2nd'].forEach(shift => {
+                            const link = document.createElement('a');
+                            link.href = `${year}-${shift}.html`;
+                            link.className = "glass-card py-4 rounded-xl text-center text-sm text-gray-400 hover:text-white";
+                            link.innerHTML = `'${year} — ${shift} Shift`;
+                            container.appendChild(link);
+                        });
+                    }
+                </script>
+
+            </div>
+        </section>
+
+        <footer class="mt-20 pt-8 border-t border-white/5 text-center text-gray-600 text-xs">
+            © 2026 JEE Mock Portal. All shifts updated for the current session.
+        </footer>
+    </main>
+
+</body>
+</html>
